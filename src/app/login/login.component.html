@@ -1,0 +1,10 @@
+<div class="auth-container">
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit()">
+      <label for="userID">User ID:</label>
+      <input type="text" id="userID" [(ngModel)]="userID" name="userID" required>
+      <button type="submit">Login</button>
+    </form>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    <p>Don't have an account? <a href="#" (click)="toggleRegistrationFunction()">Register</a></p>
+  </div>
