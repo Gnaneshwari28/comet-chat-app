@@ -14,12 +14,12 @@ import { Router, RouterModule, RouterOutlet } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(private authService: AuthService, private router: Router ){}
+  constructor(private authService: AuthService, private router: Router){}
 
   @Output() toggleRegistration = new EventEmitter<void>();
 
   userID = '';
-  apiKey = '14a2d2e74bd7dcf66d0591b630bab73261f79e88'; 
+  apiKey = ''; 
   errorMessage = '';
 
 
