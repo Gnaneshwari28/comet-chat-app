@@ -12,4 +12,6 @@ python:
 
 # The path to the documentation source
 formats: 
-  - html
+  - htmlzip
+  - pdf
+  - epub
