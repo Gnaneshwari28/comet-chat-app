@@ -1,2 +1,8 @@
-sphinx
-sphinx-rtd-theme  # Optional: for Read the Docs theme
+sphinx==4.5.0
+sphinx-rtd-theme  # Optional: If you're using the Read the Docs theme
+@angular/fire  # If your project uses Angular Fire
+firebase-admin  # If your project uses Firebase Admin
+requests  # If needed for making HTTP requests
+
+# Add Comet Chat dependencies if applicable
+cometchat-sdk  # Adjust the package name based on the actual Comet Chat SDK you're using
