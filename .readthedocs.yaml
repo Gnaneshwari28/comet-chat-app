@@ -1,26 +1,30 @@
 version: 2
 
-# The documentation builder configuration
-sphinx:
-  version: 4.5.0  # Specify the Sphinx version you are using
-  configuration: docs/conf.py  # Path to your Sphinx configuration file
-
-# Python requirements installation
-python:
-  install:
-    - requirements: docs/requirements.txt  # If you have dependencies, create this file
-
-# Specify the OS for the build
+# Specify Node.js as the primary tool
 build:
-  os: ubuntu-22.04  # Specify a supported OS
+  os: ubuntu-22.04
   tools:
-    python:  # Indicate that you are using Python tools
-      version: "3.9"  # Specify the Python version you need
-    sphinx:  # Indicate that you are using Sphinx to build the documentation
-      version: "4.5.0"  # Specify the Sphinx version you are using
+    nodejs: "18"  # Replace with the appropriate version of Node.js for Angular 17
 
-# The path to the documentation source
+# Specify commands to install dependencies and build the Angular project
+build:
+  commands:
+    - npm install  # Installs all Node.js dependencies, including Angular, Firebase, and CometChat
+    - npm run build  # Build the Angular project (or use your project's specific build command)
+
+# Documentation output format
 formats: 
   - htmlzip
   - pdf
   - epub
+
+# Documentation directory and Sphinx configuration (optional for Angular)
+sphinx:
+  configuration: docs/conf.py  # Only include this if using Sphinx for documentation generation; otherwise, omit or specify an Angular-compatible tool.
+
+# Additional environment variables, if needed for Firebase or CometChat
+env:
+  - FIREBASE_API_KEY: "your-firebase-api-key"
+  - FIREBASE_PROJECT_ID: "your-firebase-project-id"
+  - COMETCHAT_APP_ID: "your-cometchat-app-id"
+  - COMETCHAT_REGION: "your-cometchat-region"
