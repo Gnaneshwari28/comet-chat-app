@@ -1,18 +1,17 @@
 version: 2
 
-# Specify Node.js as the primary tool
+# Specify the OS and Node.js version for the build
 build:
   os: ubuntu-22.04
   tools:
-    nodejs: "18"  # Replace with the appropriate version of Node.js for Angular 17
+    nodejs: "18"  # Replace with the correct Node.js version as needed for Angular 17
 
-# Specify commands to install dependencies and build the Angular project
-build:
-  commands:
-    - npm install  # Installs all Node.js dependencies, including Angular, Firebase, and CometChat
-    - npm run build  # Build the Angular project (or use your project's specific build command)
+# Commands to install dependencies and build the Angular project
+commands:
+  - npm install  # Install project dependencies, including Angular, Firebase, and CometChat
+  - npm run build  # Build the Angular project; adjust if your project uses a different build command
 
-# Documentation output format
+# Output formats for the documentation
 formats: 
   - htmlzip
   - pdf
