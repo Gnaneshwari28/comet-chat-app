@@ -1,11 +1,11 @@
 version: 2
 
-# The documentation builder
+# The documentation builder configuration
 sphinx:
   version: 4.5.0  # Specify the Sphinx version you are using
   configuration: docs/conf.py  # Path to your Sphinx configuration file
 
-# Python requirements file
+# Python requirements installation
 python:
   install:
     - requirements: docs/requirements.txt  # If you have dependencies, create this file
@@ -14,8 +14,10 @@ python:
 build:
   os: ubuntu-22.04  # Specify a supported OS
   tools:
-    sphinx:  # This indicates that Sphinx should be used to build the documentation
-      version: 4.5.0  # Specify the Sphinx version you are using
+    python:  # Indicate that you are using Python tools
+      version: "3.9"  # Specify the Python version you need
+    sphinx:  # Indicate that you are using Sphinx to build the documentation
+      version: "4.5.0"  # Specify the Sphinx version you are using
 
 # The path to the documentation source
 formats: 
