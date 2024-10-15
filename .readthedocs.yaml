@@ -1,24 +1,22 @@
 version: 2
 
-# Specify the OS and Node.js version for the build
+# Specify Node.js directly under build tools without the os key
 build:
-  os: ubuntu-22.04
   tools:
     nodejs: "18"  # Specify the Node.js version compatible with Angular 17
 
-# The dependencies and build commands for Node.js
-build:
-  commands:
-    - npm install  # Install Angular and Firebase dependencies
-    - npm run build  # Build the Angular project
+# Specify commands for building the Angular project
+commands:
+  - npm install  # Install Angular, Firebase, and CometChat dependencies
+  - npm run build  # Build the Angular project
 
-# Output formats for the documentation
+# Define the documentation output formats
 formats: 
   - htmlzip
   - pdf
   - epub
 
-# Set environment variables for Firebase and CometChat, if needed
+# Set up any environment variables needed for Firebase and CometChat
 env:
   - FIREBASE_API_KEY=your-firebase-api-key
   - FIREBASE_PROJECT_ID=your-firebase-project-id
