@@ -1,0 +1,15 @@
+version: 2
+
+# The documentation builder
+sphinx:
+  version: 4.5.0  # Use the version of Sphinx you are using
+  configuration: docs/conf.py  # Path to your Sphinx configuration file
+
+# Python requirements file
+python:
+  install:
+    - requirements: docs/requirements.txt  # If you have dependencies, create this file
+
+# The path to the documentation source
+formats: 
+  - html
