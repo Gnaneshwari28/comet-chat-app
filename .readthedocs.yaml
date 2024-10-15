@@ -10,9 +10,12 @@ python:
   install:
     - requirements: docs/requirements.txt  # If you have dependencies, create this file
 
-  # Specify the OS for the build
+# Specify the OS for the build
 build:
-  os: ubuntu-22.04  # or any other supported OS
+  os: ubuntu-22.04  # Specify a supported OS
+  tools:
+    - sphinx  # This indicates that Sphinx should be used to build the documentation
+
 
 # The path to the documentation source
 formats: 
