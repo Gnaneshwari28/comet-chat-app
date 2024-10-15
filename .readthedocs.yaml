@@ -4,28 +4,23 @@ version: 2
 build:
   os: ubuntu-22.04
   tools:
-    nodejs: "18"  # Replace with the correct Node.js version as needed for Angular 17
+    nodejs: "18"  # Specify the Node.js version compatible with Angular 17
 
 # The dependencies and build commands for Node.js
 build:
-  jobs:
-    pre_build:
-      - npm install  # Install dependencies
-    build:
-      - npm run build  # Build the Angular project
+  commands:
+    - npm install  # Install Angular and Firebase dependencies
+    - npm run build  # Build the Angular project
+
 # Output formats for the documentation
 formats: 
   - htmlzip
   - pdf
   - epub
 
-# Documentation directory and Sphinx configuration (optional for Angular)
-sphinx:
-  configuration: docs/conf.py  # Only include this if using Sphinx for documentation generation; otherwise, omit or specify an Angular-compatible tool.
-
-# Additional environment variables, if needed for Firebase or CometChat
+# Set environment variables for Firebase and CometChat, if needed
 env:
-  - FIREBASE_API_KEY: "your-firebase-api-key"
-  - FIREBASE_PROJECT_ID: "your-firebase-project-id"
-  - COMETCHAT_APP_ID: "your-cometchat-app-id"
-  - COMETCHAT_REGION: "your-cometchat-region"
+  - FIREBASE_API_KEY=your-firebase-api-key
+  - FIREBASE_PROJECT_ID=your-firebase-project-id
+  - COMETCHAT_APP_ID=your-cometchat-app-id
+  - COMETCHAT_REGION=your-cometchat-region
