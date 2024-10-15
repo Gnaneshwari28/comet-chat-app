@@ -6,11 +6,13 @@ build:
   tools:
     nodejs: "18"  # Replace with the correct Node.js version as needed for Angular 17
 
-# Commands to install dependencies and build the Angular project
-commands:
-  - npm install  # Install project dependencies, including Angular, Firebase, and CometChat
-  - npm run build  # Build the Angular project; adjust if your project uses a different build command
-
+# The dependencies and build commands for Node.js
+build:
+  jobs:
+    pre_build:
+      - npm install  # Install dependencies
+    build:
+      - npm run build  # Build the Angular project
 # Output formats for the documentation
 formats: 
   - htmlzip
