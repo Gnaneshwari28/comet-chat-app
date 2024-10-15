@@ -10,6 +10,10 @@ python:
   install:
     - requirements: docs/requirements.txt  # If you have dependencies, create this file
 
+  # Specify the OS for the build
+build:
+  os: ubuntu-22.04  # or any other supported OS
+
 # The path to the documentation source
 formats: 
   - htmlzip
