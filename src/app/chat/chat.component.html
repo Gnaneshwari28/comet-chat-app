@@ -1,0 +1,39 @@
+<p>Chat</p>
+
+
+<div class="chat-container">
+    <div class="user-list">
+      <h3>Users</h3>
+      <ul>
+        <li *ngFor="let user of userList" (click)="selectUser(user)">
+          <img [src]="user.avatar || 'default-avatar.png'" alt="{{ user.name }}" class="user-avatar" />
+          <span>{{ user.name }}</span>
+        </li>
+      </ul>
+    </div>
+  
+    
+    <div class="chat-section" *ngIf="selectedUser">
+      <div class="chat-header">
+        <img [src]="selectedUser.avatar || 'default-avatar.png'" alt="{{ selectedUser.name }}" class="user-avatar" />
+        <span>{{ selectedUser.name }}</span>
+        <button (click)="startAudioCall(selectedUser.uid)">Start Audio Call</button>
+        <!-- <button (click)="startVideoCall(selectedUser.uid)">Start Video Call</button> -->
+      </div>
+  
+      <div class="message-list">
+        <div *ngFor="let msg of messages" [class.sent]="msg.sender.uid === userId" [class.received]="msg.sender.uid !== userId">
+          <span class="message">{{ msg.text }}</span>
+        </div>
+      </div>
+  
+      <div class="message-input">
+        <input [(ngModel)]="message" placeholder="Type a message..." />
+        <button (click)="sendMessage()">Send</button>
+      </div>
+    </div>
+  
+    <div #callContainer class="call-container"></div>
+  </div>
+  
+
